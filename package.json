@@ -1,0 +1,33 @@
+{
+  "name": "fullStackProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvoncarr/tailgate-fullstack-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bvoncarr/tailgate-fullstack-project/issues"
+  },
+  "homepage": "https://github.com/bvoncarr/tailgate-fullstack-project#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-es6-template-engine": "^2.2.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.6.0",
+    "pg-promise": "^10.10.2",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0"
+  }
+}
