@@ -1,26 +1,33 @@
 body {
-    background-color: #F4F2EB ;
+    background-color: white ;
 }
 
 .bg-light {
- text-align: center;
- background-image: url(/client/images/Tailgators.jpeg);
+ background-image: url(/client/images/tailgator.jpeg);
  background-repeat: no-repeat;
- background-position: center;
  background-color:transparent !important;
+ float:left;
 }
 
 .display-4 {
   color: #FF9636;
-  font-weight:900
+  font-weight:900;
+  padding-left: 150px;
+  padding-bottom: 20px;
 }
 
-.lead {
-  font-size: 40px;
-  color: #FF9636;
+
+.action {
+font-size: 40px;
+  color: #1D741B;
   font-weight: 900;
+  text-align:left
+ 
 }
 
+.buttons {
+  text-align: center;
+}
 
 ul {
   list-style-type: none;
