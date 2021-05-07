@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "db:create": "createdb tailgatorsdb",
+    "db:destroy": "dropdb tailgatorsdb",
+    "db:init": "psql -f schema.sql tailgatorsdb",
+    "db:seed": "psql -f seed.sql tailgatorsdb",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
