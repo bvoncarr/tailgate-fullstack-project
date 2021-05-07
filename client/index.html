@@ -11,45 +11,269 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Lato&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/client/css/styles.css">
-    <title>Tailgate 4 U</title>
+    <title>Tailgators</title>
 </head>
 
 <body>
         <!-- Navigation Bar -->
         <div class="nav">
-            <ul>
+            <ul id="hero">
+                <li><img src="/client/images/tailgator.jpeg" alt="gator"></li>
+                <li style="font-family: graduate">Tailgators</li>
                 <li><a href="/client/index.html" id="navLinks">Home</a></li>
-                <li><a href="/client/events.html" id="navLinks">Events</a></li>
-                <li><a href="/client/contact.html" id="navLinks">Contact Us</a></li>
-                <li><a href="/client/user.html" id="navLinks">New User Sign Up</a></li>
+                <li><a href="#events" id="navLinks">Events</a></li>
+                <li><a href="#contactUs" id="navLinks">Contact Us</a></li>
             </ul>
         </div>
-    <!-- Jumbotron -->
-    <div class="bg-light p-5 rounded-lg m-3">
-        <div class="img"></div>
-        <h1 class="display-4">Tailgators</h1>
+
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Welcome to Tailgators</h1>
+                <h2>We make it easy for you to tailgate</h2>
+                <br>    
+                <h3>Select a tailgate <em>OR</em> create your own!</h3>
+                <br>
+                
+            </div>
+          
+       
+        </div>
+       
+        <div class="buttons">
+        
+            <a class="btn btn-success btn-lg" href="#formInfo" role="button">Sign Up</a>
+            <a class="btn btn-success btn-lg" href="#formInfo" role="button">Create Tailgate</a>
+        
+        </div>
+
+    
+
+<!-- added card boxes for types of events -->
+        <div class="container">
+            <h1 class="infoSignup">Tailgate Events</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/client/images/football.jpeg" alt="">
+                
+                        <div class="card-body">
+                            <h5 class="card-title"> Football Tailgates</h5>
+                            <p class="card-text">
+                                Football lover? Check out our available tailgates.
+                            </p>
+        
+                            <a href="/client/events.html" class="btn btn-outline-secondary btn-sm">
+                                <i class="far fa-heart">Tailgates</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/client/images/basketball.jpg" alt="">
+        
+                        <div class="card-body">
+                            <h5 class="card-title">Basketball Tailgates</h5>
+                            <p class="card-text">
+                                Prefer hoops to hits? This is the place for you!
+                            </p>
+        
+                           
+                            <a href="/client/events.html" class="btn btn-outline-secondary btn-sm">
+                                <i class="far fa-heart">Tailgates</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/client/images/kipras-streimikis-00JuluDEK5w-unsplash.jpg" alt="">
+        
+                        <div class="card-body">
+                            <h5 class="card-title">Concert Tailgates</h5>
+                            <p class="card-text">
+                                More into music than sports? We've got you covered!
+                            </p>
+        
+                            
+                            <a href="/client/events.html" class="btn btn-outline-secondary btn-sm">
+                                <i class="far fa-heart">Tailgates</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br>
-    </div>
+        <section class="signUp">
+            <!-- sign up form -->
+            <form action="action_page.php">
+                <div class="container">
+                    <div id="formInfo">
+                        <h1 class="infoSignup">Tailgators: Sign Up</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+            
+                        <label for="firstName"><b>First Name</b></label>
+                        <input type="text" placeholder="First Name.." name="firstName" required>
+            
+                        <label for="lastName"><b>Last Name</b></label>
+                        <input type="text" placeholder="Last Name.." name="lastName" required>
+            
+            
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Email.." name="email" required>
+                    </div>
+            
+                    <div class="clearfix">
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                        <button type="button" class="cancelbtn">Cancel</button>
+            
+                    </div>
+                    
+            </form>
+        </section>
+        <br>
 
-    <br>
+        <section class="createTg">
+            <!-- create tailgate form -->
+            <form action="action_page.php">
+                <div class="container">
+                    <div id="formInfo">
+                        <h1 class="infoSignup" style="color: #1d741b;">Tailgators: Create Your Event</h1>
+                        <p>Please fill in this form to create your event.</p>
+                        <hr>
+            
+                        <label for="eventName"><b>Event Name</b></label>
+                        <input type="text" placeholder="Event Name.." name="eventName" required>
+            
+                        <label for="eventLocation"><b>Event Location</b></label>
+                        <input type="text" placeholder="Event Location.." name="eventLocation" required>
+            
+            
+                        <label for="eventDesc"><b>Event Description</b></label>
+                        <input type="text" placeholder="Event Description.." name="email" required>
+                        <br>
+                        <label for="eventDesc"><b>BYOB</b></label>
+            
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">No</label>
+                        </div>
+                    </div>
+            
+                    <div class="clearfix">
+                        <button type="submit" class="signupbtn">Create</button>
+                        <button type="button" class="cancelbtn">Cancel</button>
+            
+                    </div>
+                </div>
+            </form>
+        </section>
+        <br>
+        <section class="events">
+            <!-- select events -->
+            <div id="events">
+                <h1 class="infoSignup">Select Your Event</h1>
+            </div>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="/client/images/basketball.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Warriors Tailgate</h5>
+                                <p class="card-text"> You don't want to miss this...</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Warriors vs. Lakers!</li>
+                                <li class="list-group-item">Start Time - 6:00 p.m.</li>
+                                <li class="list-group-item">Staples Arena</li>
+                            </ul>
+                        </div>
+            
+                    </div>
+            
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="/client/images/football.jpeg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Dallas Cowboys Tailgate</h5>
+                                <p class="card-text"> You don't want to miss this...</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cowboys vs. Packers!</li>
+                                <li class="list-group-item">Start Time - 2:00 p.m.</li>
+                                <li class="list-group-item">AT&T Stadium</li>
+                            </ul>
+                        </div>
+            
+                    </div>
+            
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="/client/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">The Weeknd Tailgate</h5>
+                                <p class="card-text"> You don't want to miss this...</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">The Weeknd in Concert!</li>
+                                <li class="list-group-item">Start Time - 8:00 p.m.</li>
+                                <li class="list-group-item">Moody Center ATX</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+            
+                </div>
+                
+            </div>
+                
+        </section>
+        <br>
+        <section class="contact">
+            <!-- contact us info -->
+            <div>
+                <h1 id="contactUs"> <em> Contact Us:</em></h1>
+                <div class="names">
+                    <h1> <a href="https://github.com/BevBuCodes"> Beverly</a></h1>
+            
+                    <h1> <a href="https://github.com/bvoncarr"> Brittney</a></h1>
+            
+                    <h1> <a href="https://github.com/coreycarmichael"> Corey</a></h1>
+                </div>
+                <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
+            </div>
+        </section>
+    
 
-    <div class="action">
-    <p class="action">We make it easy for you to tailgate</p>
-    <p class="action">Choose your event <em>OR</em> make your own! </p>
-    <p class="action">Share your tailgate with friends, meet up and let the tailgate party begin!</p>
-    </div>
 
-    <div class="buttons">
-    <a class="btn btn-success btn-lg" href="/client/user.html" role="button">Sign Up Here</a>
-    <a class="btn btn-success btn-lg" href="/client/create-event.html" role="button">Create Tailgate</a>
-    </div>
 
-    <div class="footer">
 
-        <p>Created By: Beverly, Brittney & Corey</p>
 
-    </div>
+
+
+
+
+
+
+
+
+        <div class="footer">
+            <footer>
+                
+            </footer>
+
+        </div>
+   
+        <script src="/client/js/structure.js"></script>
 </body>
 
 </html>

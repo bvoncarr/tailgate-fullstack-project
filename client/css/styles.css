@@ -1,12 +1,26 @@
-body {
-    background-color: white ;
+body, html {
+    height: 100%;
+    margin: 0;
 }
 
-.bg-light {
- background-image: url(/client/images/tailgator.jpeg);
- background-repeat: no-repeat;
- background-color:transparent !important;
- float:left;
+/* The hero image */
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/client/images/tailgate-pic4.jpeg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
 .display-4 {
@@ -16,17 +30,10 @@ body {
   padding-bottom: 20px;
 }
 
-
-.action {
-font-size: 40px;
-  color: #1D741B;
-  font-weight: 900;
-  text-align:left
- 
-}
-
 .buttons {
   text-align: center;
+  margin-top: 25px;
+  padding-bottom: 500px;
 }
 
 ul {
@@ -47,6 +54,7 @@ li {
 .nav {
   border-bottom: solid #FF9636;
   padding-bottom: 15px;
+  
 }
 
 #navLinks {
@@ -54,26 +62,44 @@ li {
 }
 
 
-h1 {
+h1, h2{
     font-family: 'Graduate', cursive;
     text-align: center;
+    color: white;
 }
 
-p {
+h3 {
   font-family: 'Lato', sans-serif; 
-  color: #FF8300;
+  font-size: 35px;
+  color: #FD7F20;
+}
+
+.container {
+  padding-bottom: 500px;
+}
+
+.card {
+  border: solid #1D741B;
+}
+
+.signUp, .createTg, .events{
+  border-bottom: solid #1D741B 2px;
+  padding: 15px 15px 15px 15px;
 }
 
 
-.homePic {
-    opacity: 0.5;
-    height: 200px;
-    width: auto;
-    /* margin-top: 30px;
-    text-align: center;
-    width: 100%;
-    height: auto; */
+
+
+#contactUs {
+  display: inline;
+  color:#1D741B;
 }
+
+.names {
+  display: inline-block;
+}
+
+
 
 .footer {
    display: inline-block; 
@@ -85,80 +111,58 @@ p {
 }
 
 
-#logo {
-  display: block;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
 /* contact page specific */
 
-.info {
-    display: inline-table;
-    padding-left: 25px;
-    font-family: 'Leto', sans-serif;
-    margin-top: 30px;
+a {
+  color: #FF8300;
 }
 
-.contact {
-    text-align: center;
+a:hover {
+  color:#1D741B;
 }
 
 /* sign up page specific */
 
-* {box-sizing: border-box}
 
-/* Full-width input fields */
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.infoSignup {
+color:#FF8300
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
+#formInfo {
+  text-align: center;
+  padding-bottom: 15px;
+  font-family: 'Leto', sans-serif;
+  font-size: 20px;
+}
+
+.signupbtn {
+  background-color:#1D741B;
+  border-radius: 4px;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0 8px 8px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
+  font-family: 'Leto' sans-serif;
+  font-size: 20px;
+} 
 
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
 .cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
+  background-color: #FF9636;
+  border-radius: 4px;
+  color: white;
+  font-family: 'Leto' sans-serif;
+  font-size: 20px;
 }
 
-
-.cancelbtn, .signupbtn {
-  width: 50%;
+.clearfix {
+  text-align: center;
 }
 
-/* Add padding to container elements */
-.container {
-  padding: 16px;
+/* create tailgate page specific css */
+#createForm {
+  color:#FF8300;
 }
 
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+.toTop {
+  
+  background-color:#1D741B;
+  border-radius: 4px;
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-    width: 100%;
-  }
 }
