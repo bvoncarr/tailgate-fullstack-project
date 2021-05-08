@@ -1,0 +1,168 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* The hero image */
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/client/images/tailgate-pic4.jpeg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.display-4 {
+  color: #FF9636;
+  font-weight:900;
+  padding-left: 150px;
+  padding-bottom: 20px;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 25px;
+  padding-bottom: 500px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  padding-left: 20px;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+.nav {
+  border-bottom: solid #FF9636;
+  padding-bottom: 15px;
+  
+}
+
+#navLinks {
+   color: #FF8300;
+}
+
+
+h1, h2{
+    font-family: 'Graduate', cursive;
+    text-align: center;
+    color: white;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif; 
+  font-size: 35px;
+  color: #FD7F20;
+}
+
+.container {
+  padding-bottom: 500px;
+}
+
+.card {
+  border: solid #1D741B;
+}
+
+.signUp, .createTg, .events{
+  border-bottom: solid #1D741B 2px;
+  padding: 15px 15px 15px 15px;
+}
+
+
+
+
+#contactUs {
+  display: inline;
+  color:#1D741B;
+}
+
+.names {
+  display: inline-block;
+}
+
+
+
+.footer {
+   display: inline-block; 
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+}
+
+
+/* contact page specific */
+
+a {
+  color: #FF8300;
+}
+
+a:hover {
+  color:#1D741B;
+}
+
+/* sign up page specific */
+
+
+.infoSignup {
+color:#FF8300
+}
+
+#formInfo {
+  text-align: center;
+  padding-bottom: 15px;
+  font-family: 'Leto', sans-serif;
+  font-size: 20px;
+}
+
+.signupbtn {
+  background-color:#1D741B;
+  border-radius: 4px;
+  color: white;
+  font-family: 'Leto' sans-serif;
+  font-size: 20px;
+} 
+
+.cancelbtn {
+  background-color: #FF9636;
+  border-radius: 4px;
+  color: white;
+  font-family: 'Leto' sans-serif;
+  font-size: 20px;
+}
+
+.clearfix {
+  text-align: center;
+}
+
+/* create tailgate page specific css */
+#createForm {
+  color:#FF8300;
+}
+
+.toTop {
+  
+  background-color:#1D741B;
+  border-radius: 4px;
+
+}
