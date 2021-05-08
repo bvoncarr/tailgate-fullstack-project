@@ -33,7 +33,7 @@ body, html {
 .buttons {
   text-align: center;
   margin-top: 25px;
-  padding-bottom: 500px;
+  padding-bottom: 50px;
 }
 
 ul {
@@ -74,6 +74,11 @@ h3 {
   color: #FD7F20;
 }
 
+p {
+  color: #FF8300;
+  font-family: 'Leto', sans-serif;
+}
+
 .container {
   padding-bottom: 500px;
 }
@@ -82,11 +87,16 @@ h3 {
   border: solid #1D741B;
 }
 
-.signUp, .createTg, .events{
-  border-bottom: solid #1D741B 2px;
-  padding: 15px 15px 15px 15px;
+
+
+.signUp {
+  background-color: black;
+  color: #FD7F20
 }
 
+.events {
+  background-color: black;
+}
 
 
 
@@ -124,8 +134,12 @@ a:hover {
 /* sign up page specific */
 
 
-.infoSignup {
+#infoSignup {
 color:#FF8300
+}
+
+.tgEvents {
+  color: #FF8300;
 }
 
 #formInfo {
@@ -152,6 +166,7 @@ color:#FF8300
 }
 
 .clearfix {
+  padding-top: 25px;
   text-align: center;
 }
 
@@ -161,8 +176,59 @@ color:#FF8300
 }
 
 .toTop {
-  
+  font-family: 'Leto', sans-serif;
+  font-weight:bold;
+  padding: 5px;
   background-color:#1D741B;
   border-radius: 4px;
-
+  float: right;
 }
+
+/* swiper css */
+
+html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper-container {
+        width: 50%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
