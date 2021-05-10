@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon server.js",
     "db:create": "createdb tailgatorsdb",
     "db:destroy": "dropdb tailgatorsdb",
     "db:init": "psql -f schema.sql tailgatorsdb",
@@ -28,6 +28,7 @@
     "express-es6-template-engine": "^2.2.3",
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
     "pg-promise": "^10.10.2",
     "sequelize": "^6.6.2"
   },
