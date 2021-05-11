@@ -80,8 +80,9 @@ p {
 }
 
 .container {
-  padding-bottom: 500px;
+  padding-bottom: 200px;
 }
+
 
 .card {
   border: solid #1D741B;
@@ -104,22 +105,6 @@ p {
   display: inline;
   color:#1D741B;
 }
-
-.names {
-  display: inline-block;
-}
-
-
-
-.footer {
-   display: inline-block; 
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   text-align: center;
-}
-
 
 /* contact page specific */
 
@@ -179,10 +164,13 @@ color:#FF8300
   font-family: 'Leto', sans-serif;
   font-weight:bold;
   padding: 5px;
+  margin: 10px 10px 10px 10px;
   background-color:#1D741B;
   border-radius: 4px;
   float: right;
 }
+
+
 
 /* swiper css */
 
@@ -232,3 +220,15 @@ html,
         height: 100%;
         object-fit: cover;
       }
+
+    /* @media screen and (max-width: 767px) {
+            .mySwiper {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        } */
+     

@@ -58,10 +58,10 @@
     </div>
 </div>
 
-<!-- sign up form -->
+    <!-- sign up form -->
 
     <section class="signUp">
-        <form action="action_page.php">
+        <form action="/users" method="POST" name="signUpForm">
             <div class="container">
                 <div id="formInfo">
                     <h1 class="infoSignup">Tailgators: Sign Up</h1>
@@ -203,7 +203,8 @@
 
     <section class="createTg">
         <!-- create tailgate form -->
-        <form action="action_page.php">
+        <!-- there is no route for this form yet so i just put in create as the action -->
+        <form action="/create" method="POST" name="createTgForm">
             <div class="container">
                 <div id="formInfo">
                     <h1 class="infoSignup" style="color: #1d741b;">Tailgators: Create Your Event</h1>
@@ -307,17 +308,26 @@
     <br>
     <section class="contact">
         <!-- contact us info -->
-        <div>
+        
+        <div class="container">
+            <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
             <h1 id="contactUs"> <em> Contact Us:</em></h1>
             <div class="names">
-                <h1> <a href="https://github.com/BevBuCodes"> Beverly</a></h1>
-    
-                <h1> <a href="https://github.com/bvoncarr"> Brittney</a></h1>
-    
-                <h1> <a href="https://github.com/coreycarmichael"> Corey</a></h1>
+                <div class="bev">
+                <h2> <a href="https://github.com/BevBuCodes"> Beverly</a></h2>
+                </div>
+                
+                <div class="brittney">
+                <h2> <a href="https://github.com/bvoncarr"> Brittney</a></h2>
+                </div>
+
+                <div class="corey">
+                <h2> <a href="https://github.com/coreycarmichael"> Corey</a></h2>
+                </div>
             </div>
-            <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
+           
         </div>
+        
     </section>
     
     
@@ -325,18 +335,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="footer">
-        <footer>
-    
-        </footer>
     
     </div>
     </script>
