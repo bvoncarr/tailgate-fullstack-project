@@ -5,15 +5,15 @@ module.exports = {
     'Users',
     [
       {
-        firstname: 'Jane',
-        lastname: 'Doe',
+        firstName: 'Jane',
+        lastName: 'Doe',
         email: 'janedoe@example.com',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        firstname: 'Jane',
-        lastname: 'Doe',
+        firstName: 'Jane',
+        lastName: 'Doe',
         email: 'jondoe@example.com',
         createdAt: new Date(),
         updatedAt: new Date(),
