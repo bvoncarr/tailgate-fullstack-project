@@ -1,2 +1,59 @@
-<title>${title}</title>
-<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Lato&display=swap" rel="stylesheet">
+        <!-- Link Swiper's CSS -->
+        
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+        <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script> -->
+        
+            <title>${title}</title>
+    </head>
+<body>
+    
+
+
+
+
+<!-- Navigation Bar -->
+<div class="nav">
+    <ul id="hero">
+        <li><img src="/images/tailgator.jpeg" alt="gator"></li>
+        <li style="font-family: graduate">Tailgators</li>
+        <li><a href="/views/index.html" id="navLinks">Home</a></li>
+        <li><a href="#events" id="navLinks">Events</a></li>
+        <li><a href="#contactUs" id="navLinks">Contact Us</a></li>
+    </ul>
+</div>
+
+<script type="module">
+    import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+
+    const swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 4500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+</script>

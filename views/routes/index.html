@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Lato&display=swap" rel="stylesheet">
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <title>Tailgators</title>
-    <link rel="stylesheet" type="text/css" href="public/css/styles.css" />
-    ${head}
-</head>
-<body>
+${head}
     <!-- Navigation Bar -->
-    <div class="nav">
+    <!-- <div class="nav">
         <ul id="hero">
             <li><img src="/public/images/tailgator.jpeg" alt="gator"></li>
             <li style="font-family: graduate">Tailgators</li>
@@ -25,10 +9,10 @@
             <li><a href="#events" id="navLinks">Events</a></li>
             <li><a href="#contactUs" id="navLinks">Contact Us</a></li>
         </ul>
-    </div>
+    </div> -->
 
     <div class="hero-image">
-        <div class="hero-text">
+        <div class="hero-text" id="backToTop">
             <h1>Welcome to Tailgators</h1>
             <h2>We make it easy for you to tailgate</h2>
             <br>
@@ -44,18 +28,18 @@
 <!-- Swiper -->
 <div class="swiper-container mySwiper">
     <div class="swiper-wrapper">
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/football.jpeg">
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/football.jpeg">
            <p>Football lover? We've got the tailgates!</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/basketball.jpg">
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/basketball.jpg">
            <p> Prefer hoops to hits? No problem, basketball is life.</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/baseball.jpg">
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/baseball.jpg">
            <p> Want to see them steal home? We've got that too!</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/kipras-streimikis-00JuluDEK5w-unsplash.jpg"><p>More into music than sports? We've got you covered!</p></div>
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/kipras-streimikis-00JuluDEK5w-unsplash.jpg"><p>More into music than sports? We've got you covered!</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"><p>Don't see what you want? Create your own tailgate and get gating!</p></div>
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"><p>Don't see what you want? Create your own tailgate and get gating!</p></div>
     </div>
 </div>
 
@@ -83,7 +67,7 @@
                     <input type="text" placeholder="Location.." name="location" required>
                 </div>
                 <!-- Interest Section -->
-                <label for="interest" style="color: white; font-size: 20px;"><b>Please Select Your Sporting Interests</b></label>
+                <!-- <label for="interest" style="color: white; font-size: 20px;"><b>Please Select Your Sporting Interests</b></label>
                 
                 <br>
                 <label for="interest1"><b>Football</b></label>
@@ -187,7 +171,7 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                     <label class="form-check-label" for="inlineCheckbox1"></label>
-                </div>
+                </div> -->
                 
 
                 <br>
@@ -197,7 +181,7 @@
                     <button type="reset" class="cancelbtn">Cancel</button>
 
                 </div>
-                <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
+                <button type="submit" class="toTop"> <a href="#backToTop" style="color: white;">Back to Top</a></button>
         </form>
     </section>
     <br>
@@ -239,7 +223,7 @@
                     <button type="reset" class="cancelbtn">Cancel</button>
 
                 </div>
-                <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
+                <button type="submit" class="toTop"> <a href="#backToTop" style="color: white;">Back to Top</a></button>
             </div>
         </form>
     </section>
@@ -254,7 +238,7 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/public/images/basketball.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="/images/basketball.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Warriors Tailgate</h5>
                             <p class="card-text"> You don't want to miss this...</p>
@@ -270,7 +254,7 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/public/images/football.jpeg" alt="Card image cap">
+                        <img class="card-img-top" src="/images/football.jpeg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Dallas Cowboys Tailgate</h5>
                             <p class="card-text"> You don't want to miss this...</p>
@@ -286,7 +270,7 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/public/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"
+                        <img class="card-img-top" src="/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"
                             alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">The Weeknd Tailgate</h5>
@@ -302,7 +286,7 @@
                 </div>
                
             </div>
-            <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
+            <button type="submit" class="toTop"> <a href="#backToTop" style="color: white;">Back to Top</a></button>
         </div>
 
     </section>
@@ -311,7 +295,7 @@
         <!-- contact us info -->
         
         <div class="container">
-            <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
+            <button type="submit" class="toTop"> <a href="#backToTop" style="color: white;">Back to Top</a></button>
             <h1 id="contactUs"> <em> Contact Us:</em></h1>
             <div class="names">
                 <div class="bev">
@@ -339,8 +323,10 @@
     
     </div>
     </script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="/public/js/structure.js"></script>
+   
+    
+    <script src="/views/routes/structure.js"></script>
+    
     </body>
     
     </html>
