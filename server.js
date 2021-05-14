@@ -20,15 +20,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // home route
 app.get('/', async (req, res) => {
-  res.render('views/index', {
+  res.render('routes/index', {
     locals: {
       title: "Lets Tailgate"
     },
     partials: {
-      head: "/partials/head"
+      head: '/partials/head'
     }
-  })
-})
+  });
+});
 
 //selects all users
 app.get('/users/all', async (req, res) => {
@@ -39,10 +39,10 @@ app.get('/users/all', async (req, res) => {
       title: "TailGators",
     },
     partials: {
-      head: "/partials/head"
+      head: '/partials/head'
     }
-  })
-})
+  });
+});
 
 
 //get users by id
