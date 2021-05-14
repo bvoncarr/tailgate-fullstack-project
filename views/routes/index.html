@@ -12,16 +12,16 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Tailgators</title>
-    <link rel="stylesheet" type="text/css" href="public/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     ${head}
 </head>
 <body>
     <!-- Navigation Bar -->
     <div class="nav">
         <ul id="hero">
-            <li><img src="/public/images/tailgator.jpeg" alt="gator"></li>
+            <li><img src="/images/tailgator.jpeg" alt="gator"></li>
             <li style="font-family: graduate">Tailgators</li>
-            <li><a href="/views/index.html" id="navLinks">Home</a></li>
+            <li><a href="#home" id="navLinks">Home</a></li>
             <li><a href="#events" id="navLinks">Events</a></li>
             <li><a href="#contactUs" id="navLinks">Contact Us</a></li>
         </ul>
@@ -44,18 +44,18 @@
 <!-- Swiper -->
 <div class="swiper-container mySwiper">
     <div class="swiper-wrapper">
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/football.jpeg">
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/football.jpeg">
            <p>Football lover? We've got the tailgates!</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/basketball.jpg">
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/basketball.jpg">
            <p> Prefer hoops to hits? No problem, basketball is life.</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/baseball.jpg">
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/baseball.jpg">
            <p> Want to see them steal home? We've got that too!</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/kipras-streimikis-00JuluDEK5w-unsplash.jpg"><p>More into music than sports? We've got you covered!</p></div>
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/kipras-streimikis-00JuluDEK5w-unsplash.jpg"><p>More into music than sports? We've got you covered!</p></div>
 
-        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/public/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"><p>Don't see what you want? Create your own tailgate and get gating!</p></div>
+        <div class="swiper-slide" style="height: 200px; width:auto;"> <img src="/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"><p>Don't see what you want? Create your own tailgate and get gating!</p></div>
     </div>
 </div>
 
@@ -205,7 +205,7 @@
     <section class="createTg">
         <!-- create tailgate form -->
         <!-- there is no route for this form yet so i just put in create as the action -->
-        <form action="events/create" method="POST" name="createTgForm">
+        <form action="/events/create" method="POST" name="createTgForm">
             <div class="container">
                 <div id="formInfo">
                     <h1 class="infoSignup" style="color: #1d741b;">Tailgators: Create Your Event</h1>
@@ -235,7 +235,7 @@
                 </div>
 
                 <div class="clearfix">
-                    <button type="submit" class="signupbtn">Create</button>
+                    <a href="/events/create"><button type="submit" class="signupbtn">Create</button></a>
                     <button type="reset" class="cancelbtn">Cancel</button>
 
                 </div>
@@ -254,7 +254,7 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/public/images/basketball.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="/images/basketball.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Warriors Tailgate</h5>
                             <p class="card-text"> You don't want to miss this...</p>
@@ -270,7 +270,7 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/public/images/football.jpeg" alt="Card image cap">
+                        <img class="card-img-top" src="/images/football.jpeg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Dallas Cowboys Tailgate</h5>
                             <p class="card-text"> You don't want to miss this...</p>
@@ -286,7 +286,7 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/public/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"
+                        <img class="card-img-top" src="/images/nicholas-green-nPz8akkUmDI-unsplash.jpg"
                             alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">The Weeknd Tailgate</h5>
@@ -340,7 +340,7 @@
     </div>
     </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="/public/js/structure.js"></script>
+    <script src="/js/structure.js"></script>
     </body>
     
     </html>
