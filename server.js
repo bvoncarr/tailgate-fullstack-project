@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
       title: "Lets Tailgate"
     },
     partials: {
-      head: "/partials/head"
+      head: '/partials/head'
     }
   })
 })
@@ -45,7 +45,7 @@ app.get('/profile', async (req, res) => {
       // path
     },
     partials: {
-      head: "/partials/head"
+      head: '/partials/head'
     }
   })
 });
