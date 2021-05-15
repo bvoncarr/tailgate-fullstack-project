@@ -15,6 +15,7 @@ app.use(express.urlencoded());
 const es6Renderer = require('express-es6-template-engine');
 const { userInfo } = require("os");
 const { as } = require("pg-promise");
+const { POINT_CONVERSION_COMPRESSED } = require("constants");
 app.engine('html', es6Renderer);
 app.set('views', 'views');
 app.set('view engine', 'html');
@@ -54,29 +55,30 @@ app.get('/', async (req, res) => {
 //   res.json(events)
 // });
 
-//route to the profile page
-app.get('/profile', async (req, res) => {
-  res.render('routes/profile',{
-    locals: {
-      title: "Profile Page",
-      // user:
-      // path
-    },
-    partials: {
-      head: '/partials/head'
-    }
-  })
-});
+
 
 //gets all available events
 app.get('/events/all', async (req,res) =>{
-  const path = req.path
-  const events = await Event.findAll();
+  // const path = req.path
+  const events = await Event.findAll({
+    limit: 4,
+    where:{},
+    order:[['id', 'ASC']]
+  });
+  console.log(events[2].dataValues)
+  const event1 = events[0].dataValues;
+  const event2 = events[1].dataValues;
+  const event3 = events[2].dataValues;
+  const event4 = events[3].dataValues;
   res.render('routes/joinTeam',{
     locals: {
       title: "Join Tailgate Event",
-      // events,
-      // path
+      event1,
+      event2,
+      event3,
+      event4
+      
+
       //path
     },
     partials: {
@@ -88,6 +90,7 @@ app.get('/events/all', async (req,res) =>{
 //signup
 app.post('/users/create', async (req, res) => {
   const { firstName, lastName, email, location } = req.body
+  res.render('/profile')
 
   try{
   const newUser = await User.create({firstName, lastName, email, location})
@@ -97,6 +100,27 @@ app.post('/users/create', async (req, res) => {
     console.log(err)
     return res.status(500).json(err)
   }
+});
+
+//route to the profile page
+app.get('/profile', async (req, res) => {
+  const latestUser = await User.findAll({ 
+    limit: 1,
+    where:{},
+    order:[['id', 'DESC']]
+  })
+  console.log(latestUser[0].dataValues)
+  const userArray = latestUser[0].dataValues
+  res.render('routes/profile',{
+    locals: {
+      title: "Profile Page",
+      user: userArray
+      // path
+    },
+    partials: {
+      head: '/partials/head'
+    }
+  })
 });
 
 
