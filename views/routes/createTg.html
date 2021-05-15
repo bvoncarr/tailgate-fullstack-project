@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    ${head}
+</head>
+<body>
+    <h1 style="color: #ff9636">Create Tailgator Page</h1>
+    <section class="createTg">
+        <!-- create tailgate form
+            there is no route for this form yet so i just put in create as the action -->
+        <form action="/events/create" method="POST" name="createTgForm">
+            <div class="container">
+                <div id="formInfo">
+                    <h1 class="infoSignup" style="color: #1d741b;">Tailgators: Create Your Event</h1>
+                    <p>Please fill in this form to create your event.</p>
+                    <hr>
+                    <label for="eventName"><b>Event Name</b></label>
+                    <input type="text" placeholder="Event Name.." name="eventName" required>
+                    <label for="eventLocation"><b>Event Location</b></label>
+                    <input type="text" placeholder="Event Location.." name="eventLocation" required>
+                   <label for="eventDesc"><b>Event Description</b></label>
+                    <input type="text" placeholder="Event Description.." name="email" required>
+                    <br>
+                    <label for="eventDesc"><b>BYOB</b></label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">No</label>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <a href="/events/create"><button type="submit" class="signupbtn" id="createEvent">Create</button></a>
+                    <button type="reset" class="cancelbtn">Cancel</button>
+                </div>
+                <!-- <button type="submit" class="toTop"> <a href="#backToTop" style="color: white;">Back to Top</a></button> -->
+            </div>
+        </form>
+    </section>
+    <br>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +8,10 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Lato&display=swap" rel="stylesheet">
-        <!-- Link Swiper's CSS -->
-        
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        
         <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+        <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script> -->
         
@@ -22,18 +19,14 @@
     </head>
 <body>
     
-
-
-
-
 <!-- Navigation Bar -->
 <div class="nav">
     <ul id="hero">
         <li><img src="/images/tailgator.jpeg" alt="gator"></li>
         <li style="font-family: graduate">Tailgators</li>
-        <li><a href="#formInfo" id="navLinks">Home</a></li>
-        <li><a href="#events" id="navLinks">Events</a></li>
-        <li><a href="#contactUs" id="navLinks">Contact Us</a></li>
+        <li><a href="/" id="navLinks">Home</a></li>
+        <li><a href="/events" id="navLinks">Events</a></li>
+        <li><a href="/contactUs" id="navLinks">Contact Us</a></li>
     </ul>
 </div>
 
@@ -56,4 +49,17 @@
                 prevEl: '.swiper-button-prev',
             },
         });
+</script>
+<script>
+    var submitButton = document.getElementById('alertThanks');
+
+        submitButton.addEventListener('click', function () {
+            console.log('Thanks for signing up to be a Tailgator!')
+        });
+
+        var eventButton = document.getElementById('createEvent');
+
+            eventButton.addEventListener('click', function () {
+                console.log('Let the Tailgating Begin!')
+            });
 </script>
