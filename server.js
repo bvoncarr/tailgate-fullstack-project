@@ -42,11 +42,19 @@ app.get('/', async (req, res) => {
 
 
 //retrive all events
-// app.get('/events', async (req,res) =>{
-//   const event = await Event.findAll({
-//   });
-//   res.json(event)
-// });
+app.get('/events', async (req,res) =>{
+  const event = await Event.findAll({
+  });
+  console.log(event);
+  res.render('./routes/events', {
+    locals: {
+      title: 'Tailgator Events'
+    },
+    partials: {
+      head: '/partials/head'
+    }
+  })
+});
 
 // app.get('/events/:id', async (req,res) =>{
 //   const events = await Events.findAll({
@@ -63,7 +71,7 @@ app.get('/events/all', async (req,res) =>{
   const events = await Event.findAll({
     limit: 4,
     where:{},
-    order:[['id', 'ASC']]
+    order:[['id', 'DESC']]
   });
   console.log(events[2].dataValues)
   const event1 = events[0].dataValues;
@@ -78,7 +86,6 @@ app.get('/events/all', async (req,res) =>{
       event3,
       event4
       
-
       //path
     },
     partials: {
@@ -90,7 +97,6 @@ app.get('/events/all', async (req,res) =>{
 //signup
 app.post('/users/create', async (req, res) => {
   const { firstName, lastName, email, location } = req.body
-  res.render('/profile')
 
   try{
   const newUser = await User.create({firstName, lastName, email, location})
@@ -111,7 +117,7 @@ app.get('/profile', async (req, res) => {
   })
   console.log(latestUser[0].dataValues)
   const userArray = latestUser[0].dataValues
-  res.render('routes/profile',{
+  res.render('./routes/profile',{
     locals: {
       title: "Profile Page",
       user: userArray
@@ -127,8 +133,21 @@ app.get('/profile', async (req, res) => {
 //post to the events table
 app.post('/events/create', async (req, res) => {
   const newEvent = await Event.create(req.body);
-  res.redirect('/event')
+  res.redirect('/events/all')
 });
+
+//Tailgate Form
+app.get('/createTg', async (req, res) => {
+  res.render('./routes/createTg', {
+    locals: {
+      title: 'Create a Tailgate'
+    },
+    partials: {
+      head: '/partials/head'
+    }
+
+    })
+  });
 
 
 // //selects all users from users table
@@ -149,10 +168,10 @@ app.post('/events/create', async (req, res) => {
 
 
 //get users by id
-app.get('/users/:id', async (req, res) => {
-  const users = await User.findAll();
-  res.render('/profile');
-});
+// app.get('/users/:id', async (req, res) => {
+//   const users = await User.findAll();
+//   res.render('/profile');
+// });
 
 // create user-signup
 
@@ -180,6 +199,18 @@ app.delete('/users/:id', async (req, res) => {
   }
 
 });
+
+app.get('/contactUs', async (req, res) => {
+  res.render('./routes/contactUs', {
+    locals: {
+      title: 'Contact Us'
+    },
+    partials: {
+      head: '/partials/head'
+    }
+
+    })
+  });
 
 app.listen(PORT, () => {
 console.log(`Tailgators API is running on port ${PORT}`);
