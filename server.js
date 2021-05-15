@@ -75,8 +75,8 @@ app.get('/events/all', async (req,res) =>{
   res.render('routes/joinTeam',{
     locals: {
       title: "Join Tailgate Event",
-      events,
-      path
+      // events,
+      // path
       //path
     },
     partials: {
