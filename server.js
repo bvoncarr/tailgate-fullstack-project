@@ -78,6 +78,7 @@ app.get('/events/all', async (req,res) =>{
       event3,
       event4
       
+
       //path
     },
     partials: {
