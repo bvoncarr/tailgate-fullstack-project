@@ -72,6 +72,13 @@ h3 {
   font-family: 'Lato', sans-serif; 
   font-size: 35px;
   color: #FD7F20;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Lato', sans-serif; 
+  color: #FD7F20;
+  text-align: center;
 }
 
 p {
@@ -79,9 +86,20 @@ p {
   font-family: 'Leto', sans-serif;
 }
 
-.container {
-  padding-bottom: 20px;
+#userInfo {
+  border-style: solid;
+  border-color: #1d741b;
+
 }
+
+.names {
+ margin-top: 15px;
+}
+/* 
+.container {
+  padding-right: 20px;
+
+} */
 
 
 .card {

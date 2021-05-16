@@ -35,11 +35,7 @@ app.get('/', async (req, res) => {
       head: '/partials/head'
     }
   })
-})
-// app.get('/profile', async (req, res) => {
-//   res.send('this page works')
-// });
-
+});
 
 //retrive all events
 app.get('/events', async (req,res) =>{
@@ -56,14 +52,20 @@ app.get('/events', async (req,res) =>{
   })
 });
 
-// app.get('/events/:id', async (req,res) =>{
-//   const events = await Events.findAll({
-//     attributes: ['id' , 'eventName']
-//   });
-//   res.json(events)
-// });
-
-
+app.get('/users', async (req,res) =>{
+  const user = await User.findAll({
+    limit: 4,
+  });
+  console.log(user);
+  res.send('./routes/profile', {
+    locals: {
+      title: 'Tailgator Events',
+    },
+    partials: {
+      head: '/partials/head'
+    }
+  })
+});
 
 //gets all available events
 app.get('/events/all', async (req,res) =>{
@@ -147,58 +149,18 @@ app.get('/createTg', async (req, res) => {
     }
 
     })
-  });
-
-
-// //selects all users from users table
-// app.get('/users/all', async (req, res) => {
-//   const path = req.path
-//   const users = await User.findAll();
-//   res.render('/routes/users', {
-//     locals: {
-//       title: "TailGators",
-//       users,
-//       path
-//     },
-//     partials: {
-//       head: "/partials/head"
-//     }
-//   })
-// })
-
-
-//get users by id
-// app.get('/users/:id', async (req, res) => {
-//   const users = await User.findAll();
-//   res.render('/profile');
-// });
-
-// create user-signup
-
-
-//get users by last name
-app.get('/users/by-last-name', async (req, res) => {
-  const users = await User.findAll({
-      attributes: ['lastName']
-  });
-  res.json(users);
-});
+  })
 
 // delete user
-app.delete('/users/:id', async (req, res) => {
-  const id = req.params.id
-  try {
-    const user = await User.findOne({ where: { id } })
-
-    await user.destroy()
-
-    return res.json({ message: 'Profile Deleted...' })
-  } catch (err) {
-    console.log(err)
-    return res.status(500).json({ error: 'Something went wrong' })
-  }
-
-});
+// app.get('/profiles/:id', async (req, res) => {
+//   const userID = req.params;
+//   const profile = await User.destroy({
+//     where: {
+//       id : id
+//     }
+//   });
+//   res.redirect('/');
+// });
 
 app.get('/contactUs', async (req, res) => {
   res.render('./routes/contactUs', {

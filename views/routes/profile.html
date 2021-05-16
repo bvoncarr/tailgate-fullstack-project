@@ -7,20 +7,37 @@
     ${head}
   </head>
   <body>
-    <h1 style="color: #ff9636">Tailgator Profile Page</h1>
+    <h1 style="color:#1D741B ">Tailgator Profile Page</h1>
+    <!-- <div class="container" style="text-align: center;">
+      <div class="row"> -->
+        <!-- <div class="col-md-4 mb-4" style="text-align: center;"> -->
+          <div class="card" style="width: 20rem; text-align: center; margin-left: 40%;">
+            <img class="card-img-top" src="/images/basketball.jpg" alt="Card image cap">
+            <div class="card-body"  style="text-align: center;">
+              <!-- <h5 class="card-title"></h5> -->
+              <p class="card-text"> You don't want to miss this...</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> <h4>${user.firstName} ${user.lastName}</h4></li>
+              <li class="list-group-item">${user.email}</li>
+              <li class="list-group-item">${user.location}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
- 
-    <h3></h3>
 
-
-    <div class="userInfo">
-         <h3>${user.firstName} ${user.lastName}</h3>
-
-    </div>
-
-    <div class="createdEventInfo">
-      
-    </div>
+<!-- 
+     <div class="card" id="userInfo">
+       <div class="container">
+        
+         <h4></h4>
+          <h4></h4>
+        </div> -->
+</div>
+<br>
+<a href="${user.id/delete}"><button class="btn btn-success btn-lg" style="margin-left: 46%;">Delete Tailgator</button></a> 
+    
    
- 
+ </body>
 
