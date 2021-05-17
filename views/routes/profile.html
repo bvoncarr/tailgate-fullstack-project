@@ -25,13 +25,26 @@
           </div>
         </div>
       </div>
-
-
-
 </div>
 <br>
 
-    
-   
+    <div class="makeChanges">
+      <h1>Update or Delete Account</h1>
+      <br>
+      <form action="/profile/update" method="POST">
+        <label for="oldValue">What's changing?</label>
+        <input type="text" name="oldValue" id="oldValue" placeholder="To be changed...">
+        <label for="newValue">What are you changing it to?</label>
+        <input type="text" name="newValue" id="newValue" placeholder="Updated info...">
+        <!-- <input type="submit" name="add" value="Update Profile"> -->
+        <a class="btn btn-success btn-sm" type="submit" href="#" id="tgUpdate" role="button">Update Tailgator</a>
+      </form>
+
+      <form action="/profile/delete" method="POST">
+        <label for="delete">Delete Profile</label>
+        <input type="text" name="delete" id="delete" placeholder="Enter Tailgator Name...">
+        <a class="btn btn-danger btn-sm" type="submit" href="/users/:id" role="button" onclick="">Delete Tailgator</a>
+      </form>
+    </div>
  </body>
 
