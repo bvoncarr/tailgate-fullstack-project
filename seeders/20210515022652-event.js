@@ -7,7 +7,7 @@ module.exports = {
       {
         eventName: 'Basketball',
         eventLocation: 'Oklahoma',
-        eventDescription: 'Oklahoma City Thunder vs Los Angelos Lakers',
+        eventDescription: 'Oklahoma City Thunder vs Los Angeles Lakers',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
