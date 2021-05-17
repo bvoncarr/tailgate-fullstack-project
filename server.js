@@ -75,7 +75,7 @@ app.get('/events/all', async (req,res) =>{
     where:{},
     order:[['id', 'DESC']]
   });
-  console.log(events[2].dataValues)
+  console.log(events[3].dataValues)
   const event1 = events[0].dataValues;
   const event2 = events[1].dataValues;
   const event3 = events[2].dataValues;

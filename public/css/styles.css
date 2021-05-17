@@ -110,7 +110,8 @@ p {
 
 .signUp {
   background-color: black;
-  color: #FD7F20
+  color: #FD7F20;
+  margin-top: 15px;
 }
 
 .events {
