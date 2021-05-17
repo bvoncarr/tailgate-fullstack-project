@@ -189,7 +189,17 @@ color:#FF8300
   float: right;
 }
 
-
+.makeChanges {
+  font-family: 'Leto', sans-serif;
+  font-size: 18px;
+  border-style: solid;
+  border-color: #FD7F20;
+  color: #FD7F20;
+  background-color: black;
+  padding: 25px;
+  margin: 15px 15px 15px 15px;
+  text-align: center;
+}
 
 /* swiper css */
 

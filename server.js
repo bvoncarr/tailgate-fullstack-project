@@ -162,6 +162,17 @@ app.get('/createTg', async (req, res) => {
 //   res.redirect('/');
 // });
 
+app.delete('/users/:id', async (req, res) => {
+  const userID = req.params;
+  const profile = await User.destroy({
+    where: {
+      id : id
+    }
+  });
+  res.redirect('/');
+});
+
+
 app.get('/contactUs', async (req, res) => {
   res.render('./routes/contactUs', {
     locals: {
