@@ -4,7 +4,8 @@ const Sequelize = require('sequelize');
 const { User } = require('./models');
 const { Event } = require('./models');
 const app = express();
-const PORT = 3005;
+const PORT = 3001;
+const PORT = process.env.PORT || 5000;
 const path = require('path');
 
 const db = require('./config/config.json');
@@ -110,25 +111,25 @@ app.get('/', async (req, res) => {
   })
 });
 
-app.get('/events', async (req, res) => {
-  const events = await Event.findAll();
-  res.json(events);
-});
+// app.get('/events', async (req, res) => {
+//   const events = await Event.findAll();
+//   res.json(events);
+// });
 
-//retrive all events
-app.get('/events', async (req,res) =>{
-  const event = await Event.findAll({
-  });
-  console.log(event);
-  res.render('./routes/events', {
-    locals: {
-      title: 'Tailgator Events'
-    },
-    partials: {
-      head: '/partials/head'
-    }
-  })
-});
+// //retrive all events
+// app.get('/events', async (req,res) =>{
+//   const event = await Event.findAll({
+//   });
+//   console.log(event);
+//   res.render('./routes/events', {
+//     locals: {
+//       title: 'Tailgator Events'
+//     },
+//     partials: {
+//       head: '/partials/head'
+//     }
+//   })
+// });
 
 app.get('/users', async (req,res) =>{
   const users = await User.findAll({
@@ -151,7 +152,7 @@ app.get('/events/all', async (req,res) =>{
   const events = await Event.findAll({
     limit: 4,
     where:{},
-    order:[['id', 'DESC']]
+    order:[['id', 'DESC',]]
   });
   console.log(events[3].dataValues)
   const event1 = events[0].dataValues;
