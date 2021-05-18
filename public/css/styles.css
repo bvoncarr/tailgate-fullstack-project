@@ -220,7 +220,6 @@ html,
 
       .swiper-container {
         width: 50%;
-        height: 100%;
       }
 
       .swiper-slide {
@@ -260,4 +259,6 @@ html,
                 height: auto;
             }
         } */
-     
+.hide {
+  display: none;
+}

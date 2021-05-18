@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 const { User } = require('./models');
 const { Event } = require('./models');
 const app = express();
-const PORT = 3015;
+const PORT = 3005;
 const path = require('path');
 
 const db = require('./config/config.json');
@@ -12,10 +12,12 @@ const db = require('./config/config.json');
 app.use(express.json());
 app.use(express.urlencoded());
 
+
 const es6Renderer = require('express-es6-template-engine');
 const { userInfo } = require("os");
 const { as } = require("pg-promise");
 const { POINT_CONVERSION_COMPRESSED } = require("constants");
+const { profile } = require("console");
 app.engine('html', es6Renderer);
 app.set('views', 'views');
 app.set('view engine', 'html');
@@ -23,6 +25,77 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'))
 app.set('routes', path.join(__dirname, 'routes'))
+
+
+//get all users
+app.get('/users', async (req, res) => {
+  const users = await User.findAll();
+  res.json(users);
+});
+
+//login
+app.post('/users/login', async (req, res) => {
+  console.log("login body req.body", req.body)
+  const {email} = req.body;
+  const user = await User.findOne ({
+    where: { email: email},
+    returning: true,
+    plain: true
+  })
+  .then(function (result){
+    // console.log(result)
+    id = result.id
+    console.log(id)
+    return id
+  })
+  res.redirect(`/profile/${id}`)
+});
+
+
+//user by location
+app.get('/users/location', async (req, res) => {
+  const users = await User.findAll({
+    attributes: ['location']
+  });
+  res.json(users);
+});
+
+//delete user by id
+app.post('/profile/delete', async (req, res) => {
+  console.log("profile delete req.body",req.body)
+  const { id } = req.body;
+  const deletedUser = await User.destroy({
+      where: {
+         id,
+      }
+  });
+  res.redirect('/');
+});
+
+//update
+app.post('/profile/update/:id', async (req, res) => {
+  console.log(req.params)
+  console.log("update req.body", req.body)
+  const { id } = req.params;
+  
+  const updatedUser = await User.update(req.body, {
+    where: {
+      id,
+    }
+  });
+  
+  res.redirect(`/profile/${id}`);
+});
+
+//user by firstName
+app.post('/users/search', async (req, res) => {
+  const users = await User.findAll({
+      where: {
+          firstName: req.body.term,
+      }
+  });
+  res.json(users);
+});
 
 
 // home route
@@ -35,6 +108,11 @@ app.get('/', async (req, res) => {
       head: '/partials/head'
     }
   })
+});
+
+app.get('/events', async (req, res) => {
+  const events = await Event.findAll();
+  res.json(events);
 });
 
 //retrive all events
@@ -53,11 +131,11 @@ app.get('/events', async (req,res) =>{
 });
 
 app.get('/users', async (req,res) =>{
-  const user = await User.findAll({
-    limit: 4,
+  const users = await User.findAll({
+    //limit: 4,
   });
   console.log(user);
-  res.send('./routes/profile', {
+  res.render('./routes/profile', {
     locals: {
       title: 'Tailgator Events',
     },
@@ -101,28 +179,42 @@ app.post('/users/create', async (req, res) => {
   const { firstName, lastName, email, location } = req.body
 
   try{
-  const newUser = await User.create({firstName, lastName, email, location})
-
-  return res.redirect('/profile') 
+  const newUser = await User.create({
+    firstName, lastName, email, location},
+    {returning: true,
+    plain: true
+    },
+    )
+  .then(function (result){
+    // console.log(result)
+    id = result.id
+    console.log(id)
+    return id
+  })
+  res.redirect(`/profile/${id}`)
+  
   } catch(err){
     console.log(err)
-    return res.status(500).json(err)
+    return res.redirect('/')
   }
 });
 
 //route to the profile page
-app.get('/profile', async (req, res) => {
-  const latestUser = await User.findAll({ 
-    limit: 1,
-    where:{},
-    order:[['id', 'DESC']]
-  })
-  console.log(latestUser[0].dataValues)
-  const userArray = latestUser[0].dataValues
+app.get('/profile/:id', async (req, res) => {
+  // const latestUser = await User.findAll({ 
+  //   limit: 1,
+  //   where:{},
+  //   order:[['id', 'DESC']]
+  // })
+  // console.log(latestUser[0].dataValues)
+  // const userArray = latestUser[0].dataValues
+  const {id} = req.params
+  const user = await User.findByPk(id)
+
   res.render('./routes/profile',{
     locals: {
       title: "Profile Page",
-      user: userArray
+      user
       // path
     },
     partials: {
@@ -150,28 +242,6 @@ app.get('/createTg', async (req, res) => {
 
     })
   })
-
-// delete user
-// app.get('/profiles/:id', async (req, res) => {
-//   const userID = req.params;
-//   const profile = await User.destroy({
-//     where: {
-//       id : id
-//     }
-//   });
-//   res.redirect('/');
-// });
-
-app.delete('/users/:id', async (req, res) => {
-  const userID = req.params;
-  const profile = await User.destroy({
-    where: {
-      id : id
-    }
-  });
-  res.redirect('/');
-});
-
 
 app.get('/contactUs', async (req, res) => {
   res.render('./routes/contactUs', {

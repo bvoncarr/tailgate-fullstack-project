@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     ${head}
+
   </head>
   <body>
     <h1 style="color:#1D741B ">Tailgator Profile Page</h1>
@@ -17,34 +18,62 @@
               <!-- <h5 class="card-title"></h5> -->
               <p class="card-text"> You don't want to miss this...</p>
             </div>
+            <form action="/profile/update/${user.id}" method="POST">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"> <h4>${user.firstName} ${user.lastName}</h4></li>
-              <li class="list-group-item">${user.email}</li>
-              <li class="list-group-item">${user.location}</li>
+              <li class="list-group-item hide">${user.id}</li>
+              <!-- <li class="list-group-item">
+                <input class="hide" type="text" name="id" id="id" value="${user.id}" >
+              </li> -->
+              <li class="list-group-item hide" id="firstNameLI">
+                <input class="" type="text" name="firstName" id="firstName" placeholder="${user.firstName}" >
+              </li>
+              <li class="list-group-item hide" id="lastNameLI">
+                <input class="" type="text" name="lastName" id="lastName" placeholder="${user.lastName}" >
+              </li>
+              <li class="list-group-item hide" id="emailLI">
+                <input class="" type="text" name="email" id="email" placeholder="${user.email}" >
+              </li>
+              <li class="list-group-item hide" id="locationLI">
+                <input class="" type="text" name="location" id="location" placeholder="${user.location}" >
+              </li>
+              <li class="list-group-item" id="name">
+                <h4>${user.firstName} ${user.lastName}</h4>
+              </li>
+              <li class="list-group-item" id="userEmail">
+                ${user.email}
+              </li>
+              <li class="list-group-item" id="userLocation">
+                ${user.location}
+              </li>
             </ul>
+            <button class="btn btn-success btn-sm hide" id="tgUpdate" role="button" type="">Update Tailgator</button>
+          </form>
+          <button class="btn btn-success btn-sm" id="edit"><i class="bi bi-pencil-fill"></i> Edit Profile</button>
           </div>
         </div>
       </div>
 </div>
 <br>
 
-    <div class="makeChanges">
+     <div class="makeChanges">
       <h1>Update or Delete Account</h1>
-      <br>
-      <form action="/profile/update" method="POST">
+      <br> 
+       <form action="/profile/update" method="POST">
         <label for="oldValue">What's changing?</label>
-        <input type="text" name="oldValue" id="oldValue" placeholder="To be changed...">
+        <input type="text" name="id" id="oldValue" value="${user.email}">
         <label for="newValue">What are you changing it to?</label>
-        <input type="text" name="newValue" id="newValue" placeholder="Updated info...">
-        <!-- <input type="submit" name="add" value="Update Profile"> -->
-        <a class="btn btn-success btn-sm" type="submit" href="#" id="tgUpdate" role="button">Update Tailgator</a>
+        <input type="text" name="id" id="newValue" placeholder="Updated info...">
+         <input type="submit" name="add" value="Update Profile">
+         <button class="btn btn-success btn-sm" id="tgUpdate" role="button" type="">Update Tailgator</button>
+      </form> 
+       
+      <form action="/profile/delete" method="POST">
+        <input type="text" name="id" id="delete" class="hide" value="${user.id}">
+        <button class="btn btn-danger btn-sm" role="button" >Delete Tailgator</button>
       </form>
 
-      <form action="/profile/delete" method="POST">
-        <label for="delete">Delete Profile</label>
-        <input type="text" name="delete" id="delete" placeholder="Enter Tailgator Name...">
-        <a class="btn btn-danger btn-sm" type="submit" href="/users/:id" role="button" onclick="">Delete Tailgator</a>
-      </form>
+
     </div>
+    <script src="/js/formUpdate.js"></script>
  </body>
 

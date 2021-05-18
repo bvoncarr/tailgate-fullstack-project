@@ -54,14 +54,12 @@
  
 
     </div>
-    <!-- <button type="submit" class="toTop"> <a href="#backToTop" style="color: white;">Back to Top</a></button> -->
-   
-        <!-- <h1 style="color: #ff9636">Tailgator Signup Page</h1> -->
-        <!-- sign up form -->
+    
         <section class="signUp">
+            <div id="signUpDiv" class="">
             <form action="/users/create" method="POST" name="signUpForm">
                 <div class="container">
-                    <div id="formInfo">
+                    <div id="formInfo" >
                         <h1 class="infoSignup">Tailgators: Sign Up</h1>
                         <p>Please fill in this form to create an account.</p>
                         <hr>
@@ -76,24 +74,39 @@
                     </div>
                     <br>
                     <div class="clearfix">
-                        <a href="/users/create"><button type="submit" onclick="alert('Thanks for being a Tailgator!')"
+                        <a href="/users/create"><button type="submit"
                                 class="signupbtn" id="alertThanks">Sign Up</button></a>
-                        <button type="reset" class="cancelbtn">Cancel</button>
+                        <button type="button" id="login-btn" class="cancelbtn">Login</button>
                     </div>
-                    <button type="submit" class="toTop"> <a href="#hero" style="color: white;">Back to Top</a></button>
+                </div>    
             </form>
+        </div>
+        <div id="loginDiv" class="hide">
+            <form action="/users/login" method="POST" name="loginForm">
+                <div class="container">
+                    <div id="formInfo" >
+                        <h1 class="infoSignup">Login to Your Account</h1>
+                        <hr>
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Email.." name="email" required>
+                    </div>
+                    <br>
+                    <div class="clearfix">
+                         <button type="submit"
+                         class="signupbtn" id="loginBtn">Login</button>
+                        <button  type="button" id="signUp-btn"class="cancelbtn">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
         </section>
      
     
-    </script>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="/structure.js"></script>
-
-
-    <!-- <script src="/views/routes/structure.js"></script> -->
+    <script src="js/loginUpdate.js"></script>
 
 </body>
-
 </html>
 
 

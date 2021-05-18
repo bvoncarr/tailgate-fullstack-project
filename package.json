@@ -22,6 +22,7 @@
   "homepage": "https://github.com/bvoncarr/tailgate-fullstack-project#readme",
   "dependencies": {
     "body": "^5.1.0",
+    "bootstrap-icons": "^1.5.0",
     "express": "^4.17.1",
     "express-es6-template-engine": "^2.2.3",
     "handlebars": "^4.7.7",
