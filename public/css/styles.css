@@ -125,6 +125,10 @@ p {
   color:#1D741B;
 }
 
+.contact {
+  background-color: black;
+}
+
 /* contact page specific */
 
 a {
@@ -178,6 +182,11 @@ color:#FF8300
 /* create tailgate page specific css */
 #createForm {
   color:#FF8300;
+}
+
+.createTg {
+  background-color: black;
+  color: #FF8300;
 }
 
 .toTop {
