@@ -4,11 +4,9 @@ const Sequelize = require('sequelize');
 const { User } = require('./models');
 const { Event } = require('./models');
 const app = express();
-const PORT = 3001;
-const PORT = process.env.PORT || 5000;
+const PORT = 3002;
+// const PORT = process.env.PORT || 5000;
 const path = require('path');
-
-const db = require('./config/config.json');
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -26,6 +24,18 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'))
 app.set('routes', path.join(__dirname, 'routes'))
+
+// home route
+app.get('/', async (req, res) => {
+  res.render('routes/index', {
+    locals: {
+      title: "Lets Tailgate"
+    },
+    partials: {
+      head: '/partials/head'
+    }
+  })
+});
 
 
 //get all users
@@ -61,7 +71,7 @@ app.get('/users/location', async (req, res) => {
   res.json(users);
 });
 
-//delete user by id
+//delete user profile by id
 app.post('/profile/delete', async (req, res) => {
   console.log("profile delete req.body",req.body)
   const { id } = req.body;
@@ -73,7 +83,7 @@ app.post('/profile/delete', async (req, res) => {
   res.redirect('/');
 });
 
-//update
+//update user profile
 app.post('/profile/update/:id', async (req, res) => {
   console.log(req.params)
   console.log("update req.body", req.body)
@@ -98,39 +108,7 @@ app.post('/users/search', async (req, res) => {
   res.json(users);
 });
 
-
-// home route
-app.get('/', async (req, res) => {
-  res.render('routes/index', {
-    locals: {
-      title: "Lets Tailgate"
-    },
-    partials: {
-      head: '/partials/head'
-    }
-  })
-});
-
-// app.get('/events', async (req, res) => {
-//   const events = await Event.findAll();
-//   res.json(events);
-// });
-
-// //retrive all events
-// app.get('/events', async (req,res) =>{
-//   const event = await Event.findAll({
-//   });
-//   console.log(event);
-//   res.render('./routes/events', {
-//     locals: {
-//       title: 'Tailgator Events'
-//     },
-//     partials: {
-//       head: '/partials/head'
-//     }
-//   })
-// });
-
+//get all users
 app.get('/users', async (req,res) =>{
   const users = await User.findAll({
     //limit: 4,
