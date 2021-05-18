@@ -56,20 +56,12 @@
 <br>
 
      <div class="makeChanges">
-      <h1>Update or Delete Account</h1>
-      <br> 
-       <form action="/profile/update" method="POST">
-        <label for="oldValue">What's changing?</label>
-        <input type="text" name="id" id="oldValue" value="${user.email}">
-        <label for="newValue">What are you changing it to?</label>
-        <input type="text" name="id" id="newValue" placeholder="Updated info...">
-         <input type="submit" name="add" value="Update Profile">
-         <button class="btn btn-success btn-sm" id="tgUpdate" role="button" type="">Update Tailgator</button>
-      </form> 
+      <h1>Danger Zone Delete Account</h1>
+      <br>
        
       <form action="/profile/delete" method="POST">
         <input type="text" name="id" id="delete" class="hide" value="${user.id}">
-        <button class="btn btn-danger btn-sm" role="button" >Delete Tailgator</button>
+        <button class="btn btn-danger btn-lg" role="button" >Delete Tailgator</button>
       </form>
 
 
