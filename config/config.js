@@ -25,7 +25,8 @@ module.exports =
     "dialectOptions":{
       ssl: {
           rejectUnauthorize: false
-      }
+      },
+    "use_env_variable": process.env.DATABASE_URL
     }
   }
 }
