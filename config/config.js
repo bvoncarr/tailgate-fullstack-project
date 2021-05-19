@@ -20,13 +20,14 @@ module.exports =
     "username": process.env.DB_PROD_USERNAME,
     "password": process.env.DB_PROD_PASSWORD,
     "database": process.env.DB_PROD_DATABASE,
+    // "use_env_variable": DATABASE_URL,
     "host": process.env.DB_PROD_HOST,
     "dialect": "postgres",
     "dialectOptions":{
       ssl: {
           rejectUnauthorize: false
       },
-    "use_env_variable": DATABASE_URL
+    
     }
   }
 }
