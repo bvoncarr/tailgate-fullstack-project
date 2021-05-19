@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prod": "NODE_ENV=production npm start",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "db:create": "db:create",
