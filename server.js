@@ -5,7 +5,7 @@ const { User } = require('./models');
 const { Event } = require('./models');
 const app = express();
 const path = require('path');
-const PORT=process.env.PORT||3000;
+const PORT=process.env.PORT||3002;
 
 app.use(express.json());
 app.use(express.urlencoded());
