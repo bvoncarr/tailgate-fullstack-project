@@ -4,9 +4,8 @@ const Sequelize = require('sequelize');
 const { User } = require('./models');
 const { Event } = require('./models');
 const app = express();
-const PORT = 3002;
-// const PORT = process.env.PORT || 5000;
 const path = require('path');
+const PORT=process.env.PORT||3000;
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -46,7 +45,6 @@ app.get('/users', async (req, res) => {
 
 //login
 app.post('/users/login', async (req, res) => {
-  console.log("login body req.body", req.body)
   const {email} = req.body;
   const user = await User.findOne ({
     where: { email: email},
@@ -62,18 +60,8 @@ app.post('/users/login', async (req, res) => {
   res.redirect(`/profile/${id}`)
 });
 
-
-//user by location
-app.get('/users/location', async (req, res) => {
-  const users = await User.findAll({
-    attributes: ['location']
-  });
-  res.json(users);
-});
-
 //delete user profile by id
 app.post('/profile/delete', async (req, res) => {
-  console.log("profile delete req.body",req.body)
   const { id } = req.body;
   const deletedUser = await User.destroy({
       where: {
@@ -86,7 +74,6 @@ app.post('/profile/delete', async (req, res) => {
 //update user profile
 app.post('/profile/update/:id', async (req, res) => {
   console.log(req.params)
-  console.log("update req.body", req.body)
   const { id } = req.params;
   
   const updatedUser = await User.update(req.body, {
@@ -94,7 +81,6 @@ app.post('/profile/update/:id', async (req, res) => {
       id,
     }
   });
-  
   res.redirect(`/profile/${id}`);
 });
 
@@ -222,6 +208,7 @@ app.get('/createTg', async (req, res) => {
     })
   })
 
+  //contactUs route
 app.get('/contactUs', async (req, res) => {
   res.render('./routes/contactUs', {
     locals: {
