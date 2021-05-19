@@ -1,6 +1,6 @@
 TailGators 
 
-About: Tailgators was created to allow users from all over virtually connect with others looking to tailgate. This application was built using JavaScript, CSS, Express, and Sequelize as the ORM. The database used was created using ElephantSQL. 
+About: Tailgators was created to allow users from all over to virtually connect with others looking to tailgate. This application was built using JavaScript, CSS, Express, and Sequelize as the ORM. The database was created using ElephantSQL. 
 
 The Minimum Viable Product - To create a app that connects to a Database and accomplishes CRUD operations.
 
